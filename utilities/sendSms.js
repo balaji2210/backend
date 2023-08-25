@@ -12,6 +12,7 @@ module.exports.sendSMS = async (phone = "", message = "") => {
       from: process.env.TWILIO_PHONE,
       to: `+91${phone?.toString()}`,
     });
+    console.log("OTP SENT", `${message}`);
   } catch (error) {
     console.log(">>", error);
   }
