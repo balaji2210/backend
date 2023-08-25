@@ -1,8 +1,3 @@
-// const client = require("twilio")(
-//   process.env.TWILIO_SID,
-//   process.env.TWILIO_TOKEN
-// );
-
 const axios = require("axios");
 
 module.exports.sendSMS = async (phone = "", message = "") => {
