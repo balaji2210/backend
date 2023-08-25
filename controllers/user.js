@@ -32,7 +32,7 @@ module.exports.createUser = async (req, res) => {
         new: true,
       });
 
-      await sendSMS(phone, `Your OTP : ${OTP}`);
+      await sendSMS(phone, `${OTP}`);
 
       return responseHandler(res, "User", userFound);
     }
