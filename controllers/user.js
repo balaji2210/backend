@@ -48,7 +48,7 @@ module.exports.createUser = async (req, res) => {
       await userSchema.findByIdAndUpdate(user?._id, update, {
         new: true,
       });
-      await sendSMS(phone, `Your OTP : ${OTP}`);
+      await sendSMS(phone, `${OTP}`);
       return responseHandler(res, "User", user);
     }
     return errorHandler(res, "Failed", 400);
@@ -124,7 +124,7 @@ module.exports.resendOTP = async (req, res) => {
         new: true,
       });
 
-      await sendSMS(phone, `Your OTP : ${OTP}`);
+      await sendSMS(phone, `${OTP}`);
 
       return responseHandler(res, "OTP Resent", user);
     }
