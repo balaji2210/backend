@@ -7,7 +7,7 @@ const axios = require("axios");
 
 module.exports.sendSMS = async (phone = "", message = "") => {
   try {
-    // if (process.env.NODE_ENV !== "production") return true;
+    if (process.env.NODE_ENV !== "production") return true;
     await axios.get(`
       https://www.fast2sms.com/dev/bulkV2?authorization=${
         process.env.KEY
